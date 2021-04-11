@@ -9,8 +9,7 @@ import { ProductService } from 'src/app/services/product.service';
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
-
-
+  dataLoaded = false;
   products: Product[] = [];
   productResponseModel: ProductResponseModel = {
     data: this.products,
@@ -18,7 +17,6 @@ export class ProductComponent implements OnInit {
     success: true
   }
   constructor(private productService:ProductService) { }
-  dataLoaded = false;
   ngOnInit(): void {
     console.log("Init Çalıştı");
     this.getProducts();
